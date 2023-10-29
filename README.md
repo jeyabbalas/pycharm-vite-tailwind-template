@@ -13,7 +13,6 @@ npm install
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My App</title>
   </head>
@@ -30,10 +29,20 @@ npm install
 ```javascript
 import './style.css'
 
-document.querySelector('#app').innerHTML = `
-  <div>
-  </div>
-`
+
+function ui(divID) {
+    let divUI = divID ? document.getElementById(divID) : document.createElement('div');
+
+    // <h1 class="text-3xl font-bold underline"> Hello world! </h1>
+    let h1 = document.createElement('h1');
+    h1.innerHTML = 'Hello world!';
+    h1.className = 'text-3xl font-bold underline';
+
+    divUI.appendChild(h1);
+}
+
+
+ui('app');
 ```
 
 2. **Tailwind CSS**: follow instructions at https://tailwindcss.com/docs/installation/using-postcss
@@ -50,7 +59,7 @@ npx tailwindcss init -p
 ```javascript
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./*.{html, js}"],
+  content: ["./*.{html,js}"],
   theme: {
     extend: {},
   },
