@@ -79,7 +79,18 @@ export default {
 vite
 ```
 
+
 ## Building the Vite app
+1. Build the Vite application. This generates the `./dist/` directory. The JS and Tailwind CSS files are bundled, minified, and placed in the `./dist/assets/` directory.
+```shell
+vite build
+```
+2. Preview the production build locally.
+```shell
+vite preview
+```
+3. Remove `dist` from `.gitignore` and commit the changes.
+
 
 ## Deploying the Vite app on GitHub Pages
 
